@@ -1,0 +1,62 @@
+<template>
+  <div class="w-full max-w-md md:max-w-[900px] max-h-[calc(100vh-12rem)] overflow-y-auto pr-2">
+    <form class="bg-white rounded-lg shadow-lg p-6 mb-2" id="ticketForm" data-js="ticket-form">
+      <div id="ticketFields" data-js="ticket-fields" class="flex flex-col mb-2">
+        <div class="ticket-group mb-4 border border-gray-300 p-4 rounded-md">
+          <h3 class="font-extrabold text-gray-800">Ticker 1</h3>
+          <div class="flex flex-col md:flex-row md:space-x-4">
+            <div class="mt-2 w-full">
+              <label class="block text-sm font-medium text-gray-800"> Ticker </label>
+              <input
+                type="text"
+                name="ticketName"
+                required
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-green-500"
+                placeholder="Ex: TAEE11"
+              />
+            </div>
+            <div class="mt-2 w-full">
+              <label class="block text-sm font-medium text-gray-800"> Quantidade </label>
+              <input
+                type="number"
+                name="quantity"
+                required
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-green-500"
+                placeholder="Ex: 1"
+                min="0"
+              />
+            </div>
+            <div class="mt-2 w-full">
+              <label class="block text-sm font-medium text-gray-800"> Valor Pago </label>
+              <input
+                type="number"
+                name="value"
+                required
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-green-500"
+                placeholder="Ex: R$ 36,50"
+                min="0"
+                step="0.01"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        data-js="submit-ticket"
+        class="bg-gradient-to-b from-green-600 to-green-400 hover:from-green-500 hover:to-green-300 text-white font-semibold py-2 px-4 rounded w-full"
+      >
+        Adicionar
+      </button>
+    </form>
+  </div>
+
+  <button
+    type="button"
+    data-js="add-ticket"
+    class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded w-full max-w-md mb-4 md:max-w-[900px] mt-4"
+  >
+    + 1 Ticket
+  </button>
+</template>
