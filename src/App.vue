@@ -1,6 +1,5 @@
 <template>
   <main>
-    <!-- NAVBAR FIXA -->
     <nav class="w-1/6 bg-gray-200 p-4 fixed h-full flex flex-col">
       <header class="w-full max-w-4xl mx-auto flex justify-center items-center py-8 mb-16">
         <img
@@ -10,7 +9,6 @@
         />
       </header>
 
-      <!-- LINKS -->
       <ul class="flex flex-col justify-center">
         <li class="mb-4">
           <RouterLink
@@ -59,19 +57,4 @@
   </main>
 </template>
 
-<script setup>
-// import { computed } from 'vue'
-// import { useRoute, useRouter } from 'vue-router'
-
-// const router = useRouter()
-// const route = useRoute()
-
-// const search = computed({
-//   get() {
-//     return route.query.search ?? ''
-//   },
-//   set(search) {
-//     router.replace({ query: { search } })
-//   },
-// })
-</script>
+<script setup></script>
