@@ -18,6 +18,7 @@
 
       <div id="ticketList" class="flex flex-col space-y-2">
         <!-- View para cada ticket que vem do DB -->
+        <Ticket v-for="(ticket, index) in tickets" :key="index" :ticket="ticket" />
 
         <!-- Mock abaixo: -->
         <div class="ticket-item flex flex-row items-center bg-gray-100 p-2 rounded">
@@ -55,7 +56,29 @@
             </div>
           </div>
         </div>
+        <!-- FIM DO MOCK -->
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import Ticket from './includes/ticket.vue'
+const tickets = ref([])
+
+async function loadApiData() {
+  try {
+    const url = 'http'
+    const response = await fetch(url)
+    const data = await response.json()
+    tickets.value = data
+  } catch (error) {
+    console.error('Erro ao carregar dados:', error)
+  }
+}
+
+onMounted(() => {
+  // loadApiData()
+})
+</script>
