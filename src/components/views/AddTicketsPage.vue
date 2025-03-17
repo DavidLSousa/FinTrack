@@ -3,11 +3,11 @@
     <form class="bg-white rounded-lg shadow-lg p-6 mb-2" id="ticketForm" data-js="ticket-form">
       <div id="ticketFields" data-js="ticket-fields" class="flex flex-col mb-2">
         <div
-          v-for="numTicket in counterTicket"
-          :key="numTicket"
+          v-for="(ticket, index) in tickets"
+          :key="index"
           class="ticket-group mb-4 border border-gray-300 p-4 rounded-md"
         >
-          <formTicket :ticketCount="numTicket" />
+          <FormTicket :ticketId="index" :ticketNumber="index + 1" @remove-ticket="removeTicket" />
         </div>
       </div>
 
@@ -32,16 +32,23 @@
 
 <script setup>
 import { ref } from 'vue'
-import formTicket from './includes/formTicket.vue'
+import FormTicket from './includes/FormTicket.vue'
 
-const counterTicket = ref(1)
+const tickets = ref([{}])
 
 function addTicket() {
-  counterTicket.value++
+  tickets.value.push({})
 }
 
+function removeTicket(index) {
+  if (tickets.value.length === 1) return
+
+  tickets.value.splice(index, 1)
+}
+
+// Submissão dos tickets
 function submitTickets() {
-  console.log('Tickets adicionados:', counterTicket.value)
-  // Mandar para API
+  console.log('Tickets adicionados:', tickets.value)
+  // Enviar para API
 }
 </script>
