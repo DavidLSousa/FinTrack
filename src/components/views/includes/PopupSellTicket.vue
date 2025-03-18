@@ -4,7 +4,10 @@
 
     <div class="relative bg-white p-6 rounded-2xl shadow-2xl w-full max-w-md z-[1100]">
       <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">
-        Vender Ações da <span class="text-blue-600 font-bold">NOME</span>
+        Vender Ações da
+        <span class="text-blue-600 font-bold">
+          {{ nameTicket }}
+        </span>
       </h3>
 
       <form id="saleForm" class="space-y-4">
@@ -60,6 +63,7 @@
 
 <script setup>
 defineProps({
+  nameTicket: String,
   currentValue: Number,
   currentValuePurchased: Number,
 })

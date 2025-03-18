@@ -41,6 +41,7 @@
     v-if="showPopup"
     @close-popup="showPopup = false"
     @closePopup="closePopup"
+    :nameTicket="ticket.nameTicket"
     :currentValue="ticket.number_of_tickets"
     :currentValuePurchased="ticket.total_value_purchased"
   />
