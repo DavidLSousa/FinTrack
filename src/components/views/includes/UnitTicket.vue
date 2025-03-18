@@ -1,7 +1,7 @@
 <template>
   <div class="ticket-item flex flex-row items-center bg-gray-100 p-2 rounded">
     <div class="relative mr-4 flex items-center h-full">
-      <button @click="openCart" class="text-gray-500 hover:text-gray-700">
+      <button @click="openPopup" class="text-gray-500 hover:text-gray-700">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"
@@ -40,6 +40,7 @@
   <PopupSellTicket
     v-if="showPopup"
     @close-popup="showPopup = false"
+    @closePopup="closePopup"
     :currentValue="ticket.number_of_tickets"
     :currentValuePurchased="ticket.total_value_purchased"
   />
@@ -55,7 +56,10 @@ defineProps({
 
 const showPopup = ref(false)
 
-function openCart() {
+function openPopup() {
   showPopup.value = true
+}
+function closePopup() {
+  showPopup.value = false
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="fixed inset-0 flex items-center justify-center z-[1000]">
-    <div class="absolute inset-0 bg-black opacity-75"></div>
+    <div @click="$emit('closePopup')" class="absolute inset-0 bg-black opacity-75"></div>
 
     <div class="relative bg-white p-6 rounded-2xl shadow-2xl w-full max-w-md z-[1100]">
       <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">
@@ -39,12 +39,14 @@
 
         <div class="flex justify-between space-x-3">
           <button
+            @click="$emit('closePopup')"
             type="button"
             class="w-1/2 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg font-medium hover:bg-gray-300 transition"
           >
             Cancelar
           </button>
           <button
+            @click="submitSale"
             type="submit"
             class="w-1/2 px-4 py-2 text-white rounded-lg bg-blue-500 font-medium hover:bg-blue-600 transition"
           >
@@ -61,4 +63,9 @@ defineProps({
   currentValue: Number,
   currentValuePurchased: Number,
 })
+
+function submitSale() {
+  console.log('Venda realizada com sucesso!')
+  // Achar API para editar DB
+}
 </script>
