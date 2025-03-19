@@ -38,7 +38,7 @@
   </div>
 
   <PopupSellTicket
-    v-if="showPopup"
+    v-show="showPopup"
     @close-popup="showPopup = false"
     @closePopup="closePopup"
     :nameTicket="ticket.nameTicket"
