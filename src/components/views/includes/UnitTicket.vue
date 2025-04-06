@@ -41,9 +41,9 @@
     v-show="showPopup"
     @close-popup="showPopup = false"
     @closePopup="closePopup"
-    :nameTicket="ticket.nameTicket"
-    :currentValue="ticket.number_of_tickets"
-    :currentValuePurchased="ticket.total_value_purchased"
+    :nameTicket="ticket.ticker"
+    :currentValue="ticket.numberOfTickers"
+    :currentValuePurchased="ticket.totalValuePurchased"
   />
 </template>
 
@@ -55,6 +55,8 @@ defineProps({
   ticket: Object,
 })
 
+const emit = defineEmits(['reload-tickets'])
+
 const showPopup = ref(false)
 
 function openPopup() {
@@ -62,5 +64,7 @@ function openPopup() {
 }
 function closePopup() {
   showPopup.value = false
+
+  emit('reload-tickets')
 }
 </script>

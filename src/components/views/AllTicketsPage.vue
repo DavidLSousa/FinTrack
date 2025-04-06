@@ -17,7 +17,7 @@
       </div>
 
       <div id="ticketList" class="flex flex-col space-y-2">
-        <UnitTicket v-for="(ticket, index) in tickets" :key="index" :ticket="ticket" />
+        <UnitTicket v-for="(ticket, index) in tickets" :key="index" :ticket="ticket" @ReloadTickets="loadApiData"/>
       </div>
     </div>
   </section>
