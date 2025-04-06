@@ -127,7 +127,8 @@ function updateTicket({ index, data }) {
 }
 
 async function submitTickets() {
-  console.log('Tickets a serem enviados:', JSON.stringify(tickets.value))
+  const data = JSON.stringify(tickets.value)
+  console.log(data)
 
   try {
     const response = await fetch('http://localhost:8080/ticker', {
@@ -135,7 +136,7 @@ async function submitTickets() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(tickets.value),
+      body: data,
     })
     if (!response.ok) {
       throw new Error(`Erro HTTP: ${response.status}`)
@@ -143,5 +144,8 @@ async function submitTickets() {
   } catch (error) {
     console.error('Erro ao enviar tickets:', error)
   }
+
+  window.location.reload()
+
 }
 </script>
