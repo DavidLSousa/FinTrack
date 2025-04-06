@@ -1,35 +1,12 @@
-# FinTrack
+# FinTrack - Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+Interface web do projeto **FinTrack**, feita com **Vue.js**, integrada à [API Java](https://github.com/DavidLSousa/fintrack_api) e ao [container MariaDB](https://github.com/DavidLSousa/FinTrack_db).
 
-## Recommended IDE Setup
+## 🖥️ Tecnologias
+- Vue 3 + Vite
+- Tailwind CSS
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## ⚙️ Funcionalidades
+- Cadastro e listagem de ativos 
+- Integração com API FinTrack
+- UI reativa e responsiva
