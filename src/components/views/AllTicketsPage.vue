@@ -30,34 +30,12 @@ const tickets = ref([])
 
 async function loadApiData() {
   try {
-    // const url = 'http'
-    // const response = await fetch(url)
-    // const data = await response.json()
-    // tickets.value = data
+    const url = 'http://localhost:8080/ticker'
+    const response = await fetch(url)
+    const data = await response.json()
 
-    tickets.value = [
-      {
-        ticket: 'AAPL',
-        nameTicket: 'Apple Inc.',
-        average_price: 150.75,
-        number_of_tickets: 10,
-        total_value_purchased: 1507.5,
-      },
-      {
-        ticket: 'TSLA',
-        nameTicket: 'Tesla Inc.',
-        average_price: 680.2,
-        number_of_tickets: 5,
-        total_value_purchased: 3401.0,
-      },
-      {
-        ticket: 'MSFT',
-        nameTicket: 'Microsoft Corp.',
-        average_price: 299.99,
-        number_of_tickets: 8,
-        total_value_purchased: 2399.92,
-      },
-    ]
+    tickets.value = data
+
   } catch (error) {
     console.error('Erro ao carregar dados:', error)
   }

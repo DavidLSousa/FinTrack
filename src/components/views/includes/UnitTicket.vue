@@ -20,18 +20,18 @@
       <div class="w-1/4 flex flex-col">
         <span class="text-sm text-gray-600">
           <span class="font-semibold" data-js="ticker">{{ ticket.ticker }}</span> -
-          <span data-js="ticket-name">{{ ticket.nameTicket }}</span>
+          <span data-js="ticket-name">{{ ticket.nameTicker }}</span>
         </span>
       </div>
       <div class="w-1/4 text-center">
-        <span class="font-semibold">R$ {{ ticket.average_price }}</span>
+        <span class="font-semibold">R$ {{ ticket.averagePrice }}</span>
       </div>
       <div class="w-1/4 text-center">
-        <span data-js="number_of_tickets">{{ ticket.number_of_tickets }}</span>
+        <span data-js="number_of_tickets">{{ ticket.numberOfTickers }}</span>
       </div>
       <div class="w-1/4 text-right">
         <span data-js="value_purchased" class="font-semibold"
-          >R$ {{ ticket.total_value_purchased }}</span
+          >R$ {{ ticket.totalValuePurchased }}</span
         >
       </div>
     </div>
